@@ -29,7 +29,8 @@ public function show()
     // Define the list of steps that the flow
     // will have.
     $walker->through([
-        App\MyFlow\Step1::class,
+        App\Steps\Step1::class,
+        App\Steps\Step2::class,
         // ... as many as you want.
     ])
 
@@ -38,13 +39,8 @@ public function show()
 }
 ```
 
-As you can see in the example, we specified that we will have
-1 step, defined at `App\MyFlow\Step1`.
-
 To create a step, you can use the following artisan command:
 
 ```bash
-php artisan walker:step App\MyFlow\Step1
+php artisan walker:step Step1
 ```
-
-This will create a file called `Step1` in the folder `app/MyFlow`.
