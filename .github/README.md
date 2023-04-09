@@ -11,7 +11,6 @@ composer require qube/laravel-walker
 
 ## Usage
 
-The intention of the package is to facilitate the creation of multi step forms.
 In general, you'll start defining a route that will render the current step:
 
 ```php
