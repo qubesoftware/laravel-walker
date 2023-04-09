@@ -1,0 +1,23 @@
+{
+  "name": "qube/laravel-walker",
+  "description": "A package to easily define multi step flows in your Laravel application.",
+  "type": "library",
+  "require": {
+    "php": "^8.1",
+    "illuminate/pipeline": "^10.6",
+    "illuminate/support": "^10.6"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Qube\\Walker\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Santiago Cajal",
+      "email": "scajal@qube.uy"
+    }
+  ],
+  "minimum-stability": "stable"
+}

@@ -1,0 +1,8 @@
+.DS_Store
+._.DS_Store
+/.fleet
+/.idea
+/.vscode
+/vendor
+/composer.lock
+phpstan.neon
