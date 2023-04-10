@@ -34,5 +34,10 @@ class WalkerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/walker.php' => config_path('walker.php')
         ], 'walker-config');
+
+        // Register the commands.
+        $this->commands([
+            \Qube\Walker\Console\Commands\MakeStepCommand::class,
+        ]); 
     }
 }

@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use Qube\Walker\Step;
+use Qube\Walker\Contracts\Walker;
+
+class {{ class }} extends Step
+{
+    /**
+     * Render the step.
+     * 
+     * @return mixed
+     */
+    public function render(Walker $walker): mixed
+    {
+        //
+    }
+}

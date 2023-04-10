@@ -11,36 +11,75 @@ composer require qube/laravel-walker
 
 ## Usage
 
-In general, you'll start defining a route that will render the current step:
+Create a step using the following command:
+
+```bash
+# Replace <name> with the full qualified name of your step.
+php artisan walker:step <name>
+```
+
+After creating your steps, you can instantiate and render a Walker, for example, in a route:
+
+```php
+Route::get('/checkout', function () {
+    return Qube\Walker\Walker::walk(
+        // Assign a name to your Walker. This name will be used
+        // to identify your data in the storage.
+        name: 'checkout'
+    )->through([
+        // Specify the list of steps that the Walker will have.
+        App\Steps\Step1::class,
+        App\Steps\Step2::class,
+        // ...
+    ])->render();
+})->name('checkout');
+```
+
+The `render` method will render the current step of your Walker.
+
+### Navigating through your Walker
+
+The Walker class exposes 2 methods: `next` and `previous` to navigate through it. You can define 2 routes that access these methods:
+
+```php
+Route::post('/next', function () {
+    return Qube\Walker\Walker::walk(name: 'checkout')->next(function () {
+        // This callback will be executed after the Walker moves to
+        // the next step. So, for example, we can redirect to
+        // the /checkout route that will render the current step.
+        return redirect()->route('checkout');
+    })
+})->name('checkout.next');
+```
+
+Analogous to this, you could make a route that hits the `previous` method.
+
+### Validating data inside steps
+
+You'll surely encounter a scene where you want to validate data before navigating the Walker. To do this, the step classes have 2 methods defined, which you can override in your steps:
 
 ```php
 /**
- * Render the current walker step.
+ * Callback executed before navigating to
+ * the next step.
+ *
+ * @param  \Qube\Walker\Contracts\Walker  $walker
+ * @return mixed
  */
-public function show()
-{
-    $walker = Walker::walk(
-        // Define the name of the flow. This name
-        // will be used as a key to store / retreive
-        // the data from the storage.
-        name: 'my-awesome-multistep-flow'
-    );
+public function onBeforeNextStep(Walker $walker);
 
-    // Define the list of steps that the flow
-    // will have.
-    $walker->through([
-        App\Steps\Step1::class,
-        App\Steps\Step2::class,
-        // ... as many as you want.
-    ])
-
-    // Last, render the current step.
-    return $walker->render();
-}
+/**
+ * Callback executed before navigating to
+ * the previous step.
+ *
+ * @param  \Qube\Walker\Contracts\Walker  $walker
+ * @return mixed
+ */
+public function onBeforePreviousStep(Walker $walker);
 ```
 
-To create a step, you can use the following artisan command:
+As the names of the methods indicate, they are executed before navigating the Walker. You could create a `\Illuminate\Support\Facades\Validator` and validate the input in these methods.
 
-```bash
-php artisan walker:step Step1
-```
+### What happens when I reach the last step?
+
+You could, for example, override the `onBeforeNextStep(Walker $walker)` and redirect the user to another part of your application!
