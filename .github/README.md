@@ -1,7 +1,8 @@
 # Walker
 
-An easy-to-use package to create awesome multi step flows in your<br />
-Laravel application.
+An easy-to-use package to create awesome multi step flows in your Laravel application.
+
+**_NOTE:_** This package and its documentation are currently under construction. Expect changes in both of them!
 
 # Installation
 
