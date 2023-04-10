@@ -142,7 +142,7 @@ You can configure the package options by updating the `config/walker.php` file. 
 | Method                                       | Description                                                                                                                                                 |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Walker::walk(name: string): Walker`         | Load the walker with the given name, or create a new Walker and save it on the storage if it doesn't exist.                                                 |
-| `Walker->through(steps: array): Walker`      | Set the list of stepts that the Walker will have.                                                                                                           |
+| `Walker->through(steps: array): Walker`      | Set the list of steps that the Walker will have.                                                                                                            |
 | `Walker->render(): mixed`                    | Render the current step.                                                                                                                                    |
 | `Walker->next(next: Closure): mixed`         | Advance 1 step in the Walker and execute the given closure afterwards.                                                                                      |
 | `Walker->previous(next: Closure): mixed`     | Move back 1 step in the Walker and execute the given closure afterwards.                                                                                    |
