@@ -2,8 +2,6 @@
 
 Walker is a package that allows you to create multi-step wizards in your Laravel applications.
 
-**_NOTE:_** This package and its documentation are currently under construction. Expect changes in both of them!
-
 # Installation
 
 You can install this package via composer by running the following command:
