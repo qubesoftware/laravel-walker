@@ -152,6 +152,14 @@ You can configure the package options by updating the `config/walker.php` file. 
 | `Step->onBeforeNextStep(walker: Walker)`     | Executed before moving to the next step. Useful for validating and appending data to the Walker, and redirecting the user to another page on the last step. |
 | `Step->onBeforePreviousStep(walker: Walker)` | Executed before moving to the previous step.                                                                                                                |
 
+# Example
+
+You can see a full example under `examples/`.
+
 # License
 
 Walker is open-sourced licensed under the [MIT License](LICENSE.md).
+
+```
+
+```
