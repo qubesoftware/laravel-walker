@@ -1,7 +1,13 @@
 {
   "name": "qube/laravel-walker",
   "description": "An easy-to-use package to develop your multi step flows.",
-  "keywords": [],
+  "keywords": [
+    "multistep",
+    "stepper",
+    "steps",
+    "walker",
+    "flow"
+  ],
   "homepage": "https://github.com/qubesoftware/laravel-walker",
   "license": "MIT",
   "authors": [
