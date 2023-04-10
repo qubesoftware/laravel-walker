@@ -7,7 +7,8 @@
     "stepper",
     "steps",
     "walker",
-    "flow"
+    "flow",
+    "wizard"
   ],
   "homepage": "https://github.com/qubesoftware/laravel-walker",
   "license": "MIT",
