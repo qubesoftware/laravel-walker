@@ -86,4 +86,4 @@ You could, for example, override the `onBeforeNextStep(Walker $walker)` and redi
 
 # License
 
-Walker is open-sourced software licensed under the [MIT license](LICENSE).
+Walker is open-sourced software licensed under the [MIT license](LICENSE.md).
