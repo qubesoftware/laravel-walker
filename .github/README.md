@@ -1,15 +1,17 @@
-# Walker
+<p style="text-align:center;font-size:3rem;font-weight:bold">Walker</p>
 
+<p style="text-align:center">
 A easy-to-use package to create awesome multi step flows in your<br />
 Laravel application.
+</p>
 
-## Installation
+# Installation
 
 ```bash
 composer require qube/laravel-walker
 ```
 
-## Usage
+# Usage
 
 Create a step using the following command:
 
@@ -37,7 +39,7 @@ Route::get('/checkout', function () {
 
 The `render` method will render the current step of your Walker.
 
-### Navigating through your Walker
+## Navigating through your Walker
 
 The Walker class exposes 2 methods: `next` and `previous` to navigate through it. You can define 2 routes that access these methods:
 
@@ -54,7 +56,7 @@ Route::post('/next', function () {
 
 Analogous to this, you could make a route that hits the `previous` method.
 
-### Validating data inside steps
+## Validating data inside steps
 
 You'll surely encounter a scene where you want to validate data before navigating the Walker. To do this, the step classes have 2 methods defined, which you can override in your steps:
 
@@ -80,6 +82,10 @@ public function onBeforePreviousStep(Walker $walker);
 
 As the names of the methods indicate, they are executed before navigating the Walker. You could create a `\Illuminate\Support\Facades\Validator` and validate the input in these methods.
 
-### What happens when I reach the last step?
+## What happens when I reach the last step?
 
 You could, for example, override the `onBeforeNextStep(Walker $walker)` and redirect the user to another part of your application!
+
+# License
+
+Laravel Pennant is open-sourced software licensed under the MIT license.
