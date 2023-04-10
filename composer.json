@@ -2,6 +2,7 @@
   "name": "qube/laravel-walker",
   "description": "An easy-to-use package to develop your multi step flows.",
   "keywords": [
+    "laravel",
     "multistep",
     "stepper",
     "steps",
