@@ -13,9 +13,9 @@ interface Walker
      * walker information.
      * 
      * @param  array<string, mixed>  $data
-     * @return mixed
+     * @return self
      */
-    public function append(array $data): mixed;
+    public function append(array $data): self;
 
     /**
      * Return the walker data.
