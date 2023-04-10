@@ -157,7 +157,3 @@ You can see a full example under `examples/`.
 # License
 
 Walker is open-sourced licensed under the [MIT License](LICENSE.md).
-
-```
-
-```
