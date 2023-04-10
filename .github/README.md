@@ -1,9 +1,7 @@
-<p style="text-align:center;font-size:3rem;font-weight:bold">Walker</p>
+# Walker
 
-<p style="text-align:center">
 A easy-to-use package to create awesome multi step flows in your<br />
 Laravel application.
-</p>
 
 # Installation
 
