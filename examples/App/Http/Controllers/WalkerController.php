@@ -33,7 +33,7 @@ class WalkerController extends Controller
      */
     public function previous()
     {
-        return Walker::walk(name: 'my-first-walker')->next(
+        return Walker::walk(name: 'my-first-walker')->previous(
             fn () => redirect('/walker')
         );
     }
